@@ -67,21 +67,62 @@ export default {
     @media (max-width: 1170px) {
         .account__info{
             margin-left: 10px;
-            width: 190px;
+            width: 210px;
+        }
+        .account__avatar{
+            width: 65px;
+            padding-top: 5px;
         }
         .account__name p{
-            font-size: 12px;
+            font-size: 14px;
         }
         .account__vip{
+            left: 53px;
+        }
+    }
+    @media (max-width: 1130px) {
+        .account__name p{
+            font-size: 15px;
+        }
+    }
+    @media (max-width: 1040px) {
+        .account__info{
+            width: 190px;
+        }
+        .account__vip{
+            left: 45px;
+        }
+    }
+    @media (max-width: 1020px) {
+        .account__vip{
+            left: 45px;
+        }
+    }
+    @media (max-width: 1000px) {
+        .account__vip{
+            top: 2px;
             left: 42px;
         }
     }
     @media (max-width: 980px) {
+        .account__vip{
+            top: -2px;
+            left: 50px;
+        }
         .account__info{
             width: 75px;
         }
         .account__name{
             display: none;
+        }
+    }
+    @media (max-width: 620px) {
+        .account__vip{
+            top: 5px;
+            left: 43px;
+        }
+        .account__avatar{
+            width: 55px;
         }
     }
     @media (max-width: 380px) {
@@ -92,7 +133,7 @@ export default {
             border-radius: 10px;
         }
         .account__vip{
-            top: 2px;
+            top: 6px;
             left: 35px;
         }
     }
