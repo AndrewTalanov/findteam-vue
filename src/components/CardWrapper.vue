@@ -33,13 +33,13 @@ export default {
     .card__wrapper{
         width: 100%;
         height: 900px;
-        background-color: red;
+        /* background-color: red; */
     }
     .card__inner{
         width: 90%;
         height: 900px;
         overflow: scroll;
-        background-color: blue;
+        /* background-color: blue; */
         margin: 0 auto;
         margin-top: 40px;
         display: grid;
@@ -50,7 +50,7 @@ export default {
     .card__item{
         margin-bottom: 30px;
         height: 380px;
-        background-color: green;
+        /* background-color: green; */
     }
 
     @media (max-width: 1700px) {
