@@ -1,7 +1,8 @@
 <template>
     <vue-header></vue-header>
     <main>
-
+        <side-bar></side-bar>
+        <card-wrapper></card-wrapper>
     </main>
     <footer>
 
@@ -10,10 +11,14 @@
 
 <script>
 import VueHeader from "@/components/VueHeader.vue"
+import SideBar from '../components/SideBar.vue'
+import CardWrapper from '../components/CardWrapper.vue'
 
 export default {
     components: {
-        VueHeader
+        VueHeader,
+        SideBar,
+        CardWrapper
     }
 }
 </script>
@@ -21,7 +26,6 @@ export default {
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
     body{
-        background-color: #0f2027;
         background: linear-gradient(to right, #203942,#0f2027);
         width: 100%;
         height: 1080px;
@@ -33,5 +37,8 @@ export default {
         margin: 0;
         padding: 0;
         color: white;
+    }
+    main{
+        display: flex;
     }
 </style>
