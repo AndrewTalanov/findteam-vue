@@ -28,7 +28,8 @@ export default {
     body{
         background: linear-gradient(to right, #203942,#0f2027);
         width: 100%;
-        height: 1080px;
+        height: 100vh;
+        overflow: hidden;
         margin: 0;
         padding: 0;
         font-family: 'Rubik', sans-serif;    
