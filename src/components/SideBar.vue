@@ -1,30 +1,27 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar__top"
-        :style="sidebarTop"
-    >
-
-    </div>
+    <div class="sidebar__top" :style="sidebarTop"></div>
     <ul class="sidebar__items">
       <li
         v-for="item in items"
         :key="item.id"
-        :class="{ active: $store.state.active === item.id }"
-        @click="$store.state.active = item.id; stateActive = item.id"
+        @click="
+          $store.state.active = item.id;
+          stateActive = item.id;
+        "
         class="sidebar__item"
       >
         <div class="forBorderRadius"></div>
         <img :src="item.url" alt="icon" class="sidebar__icon" />
-        <p class="sidebar__name">
+        <p
+          class="sidebar__name"
+          :class="{ active: $store.state.active === item.id }"
+        >
           {{ item.name }}
         </p>
       </li>
     </ul>
-    <div class="sidebar__down"
-        :style="sidebarDown"
-    >
-
-    </div>
+    <div class="sidebar__down" :style="sidebarDown"></div>
   </div>
 </template>
 
@@ -32,7 +29,7 @@
 export default {
   data() {
     return {
-        stateActive: 2,
+      stateActive: 2,
       items: [
         {
           id: 1,
@@ -72,28 +69,56 @@ export default {
       ],
       methods: {},
     };
-    
   },
   computed: {
-        sidebarTop: function() {
-            let i = 1;
-            while (i <= this.items.length) {
-                if (this.stateActive == i) {
-                    return {height: 60 + ((i - 1) * 80) + 'px'}
-                }
-                i++;
-            }
-        },
-        sidebarDown: function() {
-            let i = 1;
-            while (i <= this.items.length) {
-                if (this.stateActive == i) {
-                    return {top: 140 + ((i - 1) * 80) + 'px'}
-                }
-                i++;
-            } 
+    startHeight: function () {
+      if (screen.width < 980) {
+        return {
+          startTop: 25,
+          startDown: 85,
+          offet: 60,
+        };
+      }
+      if (screen.width < 1210) {
+        return {
+          startTop: 50,
+          startDown: 110,
+          offet: 60,
+        };
+      }
+      if (screen.width >= 1210) {
+        return {
+          startTop: 35,
+          startDown: 115,
+          offet: 80,
+        };
+      }
+    },
+    sidebarTop: function () {
+      for (let i = 1; i <= this.items.length; i++) {
+        if (this.stateActive == i) {
+          return {
+            height:
+              this.startHeight.startTop +
+              (i - 1) * this.startHeight.offet +
+              "px",
+          };
         }
-    }
+      }
+    },
+    sidebarDown: function () {
+      for (let i = 1; i <= this.items.length; i++) {
+        if (this.stateActive == i) {
+          return {
+            top:
+              this.startHeight.startDown +
+              (i - 1) * this.startHeight.offet +
+              "px",
+          };
+        }
+      }
+    },
+  },
 };
 </script>
 
@@ -102,29 +127,32 @@ export default {
   width: 345px;
   height: 700px;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
 }
-.sidebar__top{
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    height: 140px;
-    width: 100%;
-    background-color: #13272e;
-    position: absolute;
-    transition: .3s;
+.sidebar__top {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* Высота задается через скрипты */
+  /* height: 140px; */
+  width: 100%;
+  background-color: #13272e;
+  position: absolute;
+  transition: 0.3s;
 }
-.sidebar__down{
-    border-top-right-radius: 15px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 220px;
-    z-index: -1;
-    background-color: #13272e;
-    transition: .3s;
+.sidebar__down {
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* Высота задается через скрипты */
+  /* top: 220px; */
+  z-index: -1;
+  background-color: #13272e;
+  transition: 0.3s;
 }
 .sidebar__items {
-  padding: 45px 0 0 0;
+  padding: 20px 0 0 0;
+  user-select: none;
 }
 .sidebar__item {
   position: relative;
@@ -138,41 +166,6 @@ export default {
   margin-left: 11px;
   font-size: 16px;
 }
-/* большая часть кода будет удалена ибо переделал */
-/* .active {
-  background: linear-gradient(to right, #203942, #1d353e);
-  z-index: 10;
-} */
-/* .active::before, .active::after, .forBorderRadius::after, .forBorderRadius::before{
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        content: "";
-        right: 0;
-    }
-    .active::before, .active::after{
-        z-index: 1;
-        background-color: #1D353E;
-    }
-    .forBorderRadius::after, .forBorderRadius::before{
-        z-index: 2;
-        background-color: #13272E;
-    }
-    .active::before{
-        top: -20px;
-    }
-    .active::after{
-        top: 80px;
-    }
-    .forBorderRadius::after{
-        border-bottom-right-radius: 30px;
-        top: -20px;
-    }
-    .forBorderRadius::before{
-        border-top-right-radius: 30px;
-        top: 80px;
-    } */
-
 @media (max-width: 1500px) {
   .sidebar {
     width: 310px;
@@ -188,23 +181,50 @@ export default {
   .sidebar__item {
     height: 60px;
   }
-  .active::after {
-    top: 60px;
-  }
-  .forBorderRadius::after {
-    border-bottom-right-radius: 15px;
-  }
-  .forBorderRadius::before {
-    border-top-right-radius: 15px;
-    top: 60px;
-  }
 }
 @media (max-width: 1130px) {
   .sidebar {
-    width: 270px;
+    width: 240px;
   }
   .sidebar__item {
     padding-left: 20px;
+  }
+}
+@media (max-width: 980px) {
+  .sidebar {
+    width: 120px;
+  }
+  .sidebar__item {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sidebar__name {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+  }
+  .sidebar__items {
+    padding: 10px 0 0 0;
+  }
+}
+@media (max-width: 426px) {
+  .sidebar {
+    width: 100px;
+  }
+  .sidebar__name {
+    margin: 5px 0 0 0;
+    font-size: 10px;
+  }
+  .sidebar__icon {
+    width: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .sidebar__name {
+    display: none;
+  }
+  .active {
+    display: block;
   }
 }
 </style>

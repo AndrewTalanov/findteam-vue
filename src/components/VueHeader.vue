@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
   header{
-    height: 130px;
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -25,12 +25,12 @@ export default {
 
   @media (max-width: 1525px) {
     header{
-      height: 100px;
+      height: 80px;
     }
   }
   @media (max-width: 1170px) {
     header{
-      height: 80px;
+      height: 70px;
     }
   }
 </style>
