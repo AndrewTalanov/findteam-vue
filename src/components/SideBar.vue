@@ -11,7 +11,6 @@
         "
         class="sidebar__item"
       >
-        <div class="forBorderRadius"></div>
         <img :src="item.url" alt="icon" class="sidebar__icon" />
         <p
           class="sidebar__name"
@@ -29,6 +28,10 @@
 export default {
   data() {
     return {
+      // startTop: 35,
+      // startDown: 115,
+      // offet: 80,
+      screenWidth: 1920,
       stateActive: 2,
       items: [
         {
@@ -67,26 +70,89 @@ export default {
           name: "Менторы",
         },
       ],
-      methods: {},
-    };
+    };  
   },
+  // created() {
+  //   window.addEventListener('resize', this.updateWidth);
+  // },
+  // watch: {
+  //   stateActive: function(){
+  //     this.sidebarTop();
+  //     this.sidebarDown();
+  //   }
+  // },
+  // methods: {
+  //   updateWidth() {
+  //     this.screenWidth = window.innerWidth;
+  //   },
+  //   startHeight() {
+  //     if (this.screenWidth >= 1210) {
+  //       this.startTop = 35;
+  //       this.startDown = 115;
+  //       this.offet = 80;
+  //     }
+  //     else if ((this.screenWidth < 1210) && (this.screenWidth > 980)) {
+  //       this.startTop = 50;
+  //       this.startDown = 110;
+  //       this.offet = 60;
+  //     }
+  //     else if (this.screenWidth < 980) {
+  //       this.startTop = 25;
+  //       this.startDown = 85;
+  //       this.offet = 60;
+  //     }
+  //   },
+  //   sidebarTop() {
+  //     console.log(this.screenWidth)
+  //     this.startHeight;
+  //     console.log(this.startTop)
+  //     for (let i = 1; i <= this.items.length; i++) {
+  //       let test = this.startTop + (i - 1) * this.offet + "px";
+  //       if (this.stateActive == i) {
+  //         console.log({height: test})
+  //         return {
+  //           height: test
+  //         };
+  //       }
+  //     }
+  //   },
+  //   sidebarDown() {
+  //     for (let i = 1; i <= this.items.length; i++) {
+  //       if (this.stateActive == i) {
+  //         return {
+  //           top:
+  //             this.startDown +
+  //             (i - 1) * this.offet +
+  //             "px",
+  //         };
+  //       }
+  //     }
+  //   }
+  // },
+  
   computed: {
+    // updateWidth: function() {
+    //   this.screenWidth = window.innerWidth;
+    //   if (this.screenWidth > 1210) {
+    //     console.log(this.startHeight.startTop)
+    //   }
+    // },
     startHeight: function () {
-      if (screen.width < 980) {
+      if (window.innerWidth < 980) {
         return {
           startTop: 25,
           startDown: 85,
           offet: 60,
         };
       }
-      if (screen.width < 1210) {
+      if (window.innerWidth < 1210) {
         return {
           startTop: 50,
           startDown: 110,
           offet: 60,
         };
       }
-      if (screen.width >= 1210) {
+      if (window.innerWidth >= 1210) {
         return {
           startTop: 35,
           startDown: 115,

@@ -2,7 +2,7 @@
     <vue-header></vue-header>
     <main>
         <side-bar></side-bar>
-        <card-wrapper></card-wrapper>
+        <card-list></card-list>
     </main>
     <footer>
 
@@ -12,13 +12,13 @@
 <script>
 import VueHeader from "@/components/VueHeader.vue"
 import SideBar from '../components/SideBar.vue'
-import CardWrapper from '../components/CardWrapper.vue'
+import CardList from '../components/CardList.vue'
 
 export default {
     components: {
         VueHeader,
         SideBar,
-        CardWrapper
+        CardList
     }
 }
 </script>
