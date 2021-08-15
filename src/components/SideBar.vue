@@ -28,6 +28,7 @@
 export default {
   data() {
     return {
+      // данный комментарий создан для теста коммитов на новой винде
       // startTop: 35,
       // startDown: 115,
       // offet: 80,
