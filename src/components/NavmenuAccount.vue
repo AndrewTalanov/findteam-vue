@@ -21,6 +21,7 @@ export default {};
 </script>
 
 <style scoped>
+/* тест коммит, перешел на убунту */
 .account__info {
   width: 330px;
   height: 71px;
