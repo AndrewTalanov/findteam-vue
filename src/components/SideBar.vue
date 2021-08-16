@@ -28,7 +28,6 @@
 export default {
   data() {
     return {
-      // данный комментарий создан для теста коммитов на новой винде
       // startTop: 35,
       // startDown: 115,
       // offet: 80,
@@ -192,7 +191,7 @@ export default {
 <style>
 .sidebar {
   width: 345px;
-  height: 700px;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
