@@ -201,13 +201,12 @@ export default {
 .card__wrapper {
   width: 100%;
   height: 90vh;
-  /* background-color: red; */
 }
 .card__inner {
+  border-radius: 20px;
   width: 90%;
   height: 95%;
   overflow-x: hidden;
-  /* background-color: blue; */
   margin: 0 auto;
   margin-top: 40px;
   display: grid;

@@ -6,6 +6,7 @@
         v-for="item in items"
         :key="item.id"
         @click="
+          $store.commit('changeActive')
           $store.state.active = item.id;
           stateActive = item.id;
         "

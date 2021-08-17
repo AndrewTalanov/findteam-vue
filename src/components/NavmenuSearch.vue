@@ -38,6 +38,9 @@ export default {
   }
 }
 @media (max-width: 1525px) {
+  .panel {
+    margin-left: 0px;
+  }
   .button {
     width: 45px;
     height: 45px;
@@ -49,9 +52,6 @@ export default {
   }
 }
 @media (max-width: 890px) {
-  .panel {
-    margin-left: 0;
-  }
   .button {
     width: 35px;
     height: 35px;
@@ -67,7 +67,12 @@ export default {
 }
 @media (max-width: 769px) {
   .panel {
-    margin-right: 20px;
+    margin-right: 70px;
+  }
+}
+@media (max-width: 680px) {
+  .panel {
+    margin-right: 30px;
   }
 }
 @media (max-width: 620px) {
@@ -82,14 +87,9 @@ export default {
     margin: 3px 0px 0 0;
   }
 }
-@media (max-width: 500px) {
-  .panel {
-    margin-right: 10px;
-  }
-}
 @media (max-width: 350px) {
   .panel {
-    margin-right: 5px;
+    margin-right: 10px;
   }
   .button-filter {
     margin-left: 5px;

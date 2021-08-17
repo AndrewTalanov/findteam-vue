@@ -1,12 +1,8 @@
 <template>
   <div class="panel__search">
     <form action="" class="panel__form">
-      <button class="panel__select">
-        <p>All</p>
-        <img src="@/assets/images/dropdown.png" alt="select" />
-      </button>
-      <input type="text" class="panel__input" />
-      <button type="submit" class="panel__run-search">
+      <input type="text" class="panel__input" v-model="searchQuery" />
+      <button type="submit" class="panel__run-search" @click.prevent="">
         <img src="@/assets/images/magnifier.png" alt="search" />
       </button>
     </form>
@@ -16,6 +12,16 @@
 <script>
 export default {
   name: "search-select",
+  data() {
+    return {
+      searchQuery: '',
+    };
+  },
+  computed: {
+    searchContent() {
+      
+    },
+  },
 };
 </script>
 
@@ -25,7 +31,6 @@ export default {
   border-radius: 20px;
   margin-left: 20px;
 }
-.panel__select,
 .panel__run-search,
 .panel__input {
   border: none;
@@ -36,21 +41,10 @@ export default {
   height: 60px;
   width: 760px;
 }
-.panel__select,
 .panel__run-search {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.panel__select {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  width: 115px;
-  font-size: 28px;
-  border-right: 1px solid #182f37;
-}
-.panel__select img {
-  margin-left: 10px;
 }
 .panel__run-search {
   border-top-right-radius: 20px;
@@ -60,6 +54,7 @@ export default {
   padding-right: 15px;
 }
 .panel__input {
+  border-radius: 20px;
   width: 100%;
   outline: none;
   padding: 20px;
@@ -74,15 +69,8 @@ export default {
 }
 @media (max-width: 1525px) {
   .panel__form {
-    width: 550px;
+    width: 600px;
     height: 45px;
-  }
-  .panel__select p {
-    font-size: 20px;
-  }
-  .panel__select img {
-    width: 18px;
-    height: 18px;
   }
   .panel__run-search img {
     width: 23.5px;
@@ -124,17 +112,6 @@ export default {
     height: 16px;
     padding-right: 0px;
   }
-  .panel__select p {
-    font-size: 16px;
-  }
-  .panel__select img {
-    width: 16px;
-    height: 14px;
-    margin-left: 5px;
-  }
-  .panel__select {
-    width: 90px;
-  }
 }
 @media (max-width: 890px) {
   .panel__search {
@@ -153,16 +130,6 @@ export default {
     height: 5px;
     font-size: 12px;
     padding: 10px;
-  }
-  .panel__select {
-    width: 45px;
-  }
-  .panel__select p {
-    display: none;
-  }
-  .panel__select img {
-    width: 12px;
-    height: 10px;
   }
   .panel__run-search {
     width: 40px;
