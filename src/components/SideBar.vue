@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar__top" :style="sidebarTop"></div>
+    <div class="sidebar__top" :style="{height: heightTop + 'px'}"></div>
     <ul class="sidebar__items">
       <li
         v-for="item in items"
@@ -20,7 +20,7 @@
         </p>
       </li>
     </ul>
-    <div class="sidebar__down" :style="sidebarDown"></div>
+    <div class="sidebar__down" :style="{top: heightDown + 'px'}"></div>
   </div>
 </template>
 
@@ -28,10 +28,12 @@
 export default {
   data() {
     return {
-      // startTop: 35,
-      // startDown: 115,
-      // offet: 80,
-      screenWidth: 1920,
+      heightDown: null,
+      heightTop: null,
+      startTop: null,
+      startDown: null,
+      offset: null,
+      screenWidth: null,
       stateActive: 2,
       items: [
         {
@@ -72,123 +74,65 @@ export default {
       ],
     };  
   },
-  // created() {
-  //   window.addEventListener('resize', this.updateWidth);
-  // },
-  // watch: {
-  //   stateActive: function(){
-  //     this.sidebarTop();
-  //     this.sidebarDown();
-  //   }
-  // },
-  // methods: {
-  //   updateWidth() {
-  //     this.screenWidth = window.innerWidth;
-  //   },
-  //   startHeight() {
-  //     if (this.screenWidth >= 1210) {
-  //       this.startTop = 35;
-  //       this.startDown = 115;
-  //       this.offet = 80;
-  //     }
-  //     else if ((this.screenWidth < 1210) && (this.screenWidth > 980)) {
-  //       this.startTop = 50;
-  //       this.startDown = 110;
-  //       this.offet = 60;
-  //     }
-  //     else if (this.screenWidth < 980) {
-  //       this.startTop = 25;
-  //       this.startDown = 85;
-  //       this.offet = 60;
-  //     }
-  //   },
-  //   sidebarTop() {
-  //     console.log(this.screenWidth)
-  //     this.startHeight;
-  //     console.log(this.startTop)
-  //     for (let i = 1; i <= this.items.length; i++) {
-  //       let test = this.startTop + (i - 1) * this.offet + "px";
-  //       if (this.stateActive == i) {
-  //         console.log({height: test})
-  //         return {
-  //           height: test
-  //         };
-  //       }
-  //     }
-  //   },
-  //   sidebarDown() {
-  //     for (let i = 1; i <= this.items.length; i++) {
-  //       if (this.stateActive == i) {
-  //         return {
-  //           top:
-  //             this.startDown +
-  //             (i - 1) * this.offet +
-  //             "px",
-  //         };
-  //       }
-  //     }
-  //   }
-  // },
-  
-  computed: {
-    // updateWidth: function() {
-    //   this.screenWidth = window.innerWidth;
-    //   if (this.screenWidth > 1210) {
-    //     console.log(this.startHeight.startTop)
-    //   }
-    // },
-    startHeight: function () {
-      if (window.innerWidth < 980) {
-        return {
-          startTop: 25,
-          startDown: 85,
-          offet: 60,
-        };
+  methods: {
+    updateWidth() {
+      this.screenWidth = window.innerWidth;
+    },
+    startHeight() {
+      if (this.screenWidth >= 1210) {
+        this.startTop = 35;
+        this.startDown = 115;
+        this.offset = 80;
       }
-      if (window.innerWidth < 1210) {
-        return {
-          startTop: 50,
-          startDown: 110,
-          offet: 60,
-        };
+      else if ((this.screenWidth < 1210) && (this.screenWidth > 980)) {
+        this.startTop = 50;
+        this.startDown = 110;
+        this.offset = 60;
       }
-      if (window.innerWidth >= 1210) {
-        return {
-          startTop: 35,
-          startDown: 115,
-          offet: 80,
-        };
+      else if (this.screenWidth < 980) {
+        this.startTop = 25;
+        this.startDown = 85;
+        this.offset = 60;
       }
     },
-    sidebarTop: function () {
+    sidebarTop() {
       for (let i = 1; i <= this.items.length; i++) {
         if (this.stateActive == i) {
-          return {
-            height:
-              this.startHeight.startTop +
-              (i - 1) * this.startHeight.offet +
-              "px",
-          };
+          this.heightTop = this.startTop + (i - 1) * this.offset;
         }
       }
     },
-    sidebarDown: function () {
+    sidebarDown() {
       for (let i = 1; i <= this.items.length; i++) {
         if (this.stateActive == i) {
-          return {
-            top:
-              this.startHeight.startDown +
-              (i - 1) * this.startHeight.offet +
-              "px",
-          };
+          this.heightDown = this.startDown + (i - 1) * this.offset;
         }
       }
     },
   },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+    window.addEventListener('resize', this.startHeight);
+    window.addEventListener('resize', this.sidebarTop);
+    window.addEventListener('resize', this.sidebarDown);
+  },
+  mounted() {
+    this.updateWidth();
+    this.startHeight();
+    this.sidebarTop();
+    this.sidebarDown();
+  },
+  watch() {
+    this.stateActive
+  },
+  beforeUpdate() {
+    this.sidebarTop();
+    this.sidebarDown();
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .sidebar {
   width: 345px;
   height: 100vh;
@@ -199,7 +143,6 @@ export default {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   /* Высота задается через скрипты */
-  /* height: 140px; */
   width: 100%;
   background-color: #13272e;
   position: absolute;
@@ -211,7 +154,7 @@ export default {
   height: 100%;
   position: absolute;
   /* Высота задается через скрипты */
-  /* top: 220px; */
+  /* top: 400px; */
   z-index: -1;
   background-color: #13272e;
   transition: 0.3s;

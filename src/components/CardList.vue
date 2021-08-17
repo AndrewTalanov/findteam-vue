@@ -39,8 +39,8 @@
 export default {
   data() {
     return {
-      bodySlice: 400,
-      titleSlice: 90,
+      bodySlice: null,
+      titleSlice: null,
       widthBrows: null,
       threeDots: "...",
       cards: [
@@ -172,17 +172,19 @@ export default {
       } else if (this.widthBrows > 319) {
         this.bodySlice = 270
         this.titleSlice = 45
-      } 
-      
+      }
     },
     updateWidth() {
       this.widthBrows = window.innerWidth;
+      this.forThreeDots();
     }
   },
   created() {
-    this.widthBrows = window.innerWidth;
     window.addEventListener('resize', this.updateWidth);
     window.addEventListener('resize', this.forThreeDots);
+  },
+  mounted() {
+    this.updateWidth();
   }
 };
 </script>
