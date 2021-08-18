@@ -39,37 +39,37 @@ export default {
       items: [
         {
           id: 1,
-          url: require("../assets/images/open-page.png"),
+          url: require("@/assets/images/open-page.png"),
           name: "Моя страница",
         },
         {
           id: 2,
-          url: require("../assets/images/adverts.png"),
+          url: require("@/assets/images/adverts.png"),
           name: "Публикации",
         },
         {
           id: 3,
-          url: require("../assets/images/messages.png"),
+          url: require("@/assets/images/messages.png"),
           name: "Сообщения",
         },
         {
           id: 4,
-          url: require("../assets/images/following.png"),
+          url: require("@/assets/images/following.png"),
           name: "Подписки",
         },
         {
           id: 5,
-          url: require("../assets/images/bookmarks.png"),
+          url: require("@/assets/images/bookmarks.png"),
           name: "Избранное",
         },
         {
           id: 6,
-          url: require("../assets/images/partners.png"),
+          url: require("@/assets/images/partners.png"),
           name: "Инвесторы",
         },
         {
           id: 7,
-          url: require("../assets/images/mentors.png"),
+          url: require("@/assets/images/mentors.png"),
           name: "Менторы",
         },
       ],
@@ -171,6 +171,7 @@ export default {
   align-items: center;
   height: 80px;
   padding-left: 35px;
+  cursor: pointer;
 }
 .sidebar__name {
   margin-left: 11px;

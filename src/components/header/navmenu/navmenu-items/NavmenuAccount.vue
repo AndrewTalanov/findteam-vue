@@ -3,12 +3,12 @@
     <div class="account__avatar">
       <img
         class="account__avatar-img"
-        src="../assets/images/navmenu-avatar.png"
+        src="@/assets/images/navmenu-avatar.png"
         alt="avatar"
       />
     </div>
     <div class="account__vip">
-      <img src="../assets/images/vip.png" alt="" />
+      <img src="@/assets/images/vip.png" alt="" />
     </div>
     <div class="account__name">
       <p>Алексей Мистахов</p>

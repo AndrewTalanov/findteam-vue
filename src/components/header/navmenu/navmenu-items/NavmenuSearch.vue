@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SearchSelect from "./SearchSelect.vue";
+import SearchSelect from "@/components/header/navmenu/navmenu-items/SearchSelect.vue";
 
 export default {
   components: {

@@ -10,21 +10,18 @@
         <investors-vue v-else-if="$store.state.active == 6"></investors-vue>
         <mentors-vue v-else-if="$store.state.active == 7"></mentors-vue>
     </main>
-    <footer>
-
-    </footer>
 </template>
 
 <script>
-import VueHeader from "@/components/VueHeader.vue"
-import SideBar from '../components/SideBar.vue'
-import CardList from '../components/CardList.vue'
-import MyPage from '../components/MyPage.vue'
-import MyMessage from '../components/MyMessage.vue'
-import MySub from '../components/MySub.vue'
-import MyFavorites from '../components/MyFavorites.vue'
-import InvestorsVue from '../components/InvestorsVue.vue'
-import MentorsVue from '../components/MentorsVue.vue'
+import VueHeader from "@/components/header/VueHeader.vue"
+import SideBar from '@/components/main/sidebar/SideBar.vue'
+import CardList from '@/components/main/CardList.vue'
+import MyPage from '@/components/main/MyPage.vue'
+import MyMessage from '@/components/main/MyMessage.vue'
+import MySub from '@/components/main/MySub.vue'
+import MyFavorites from '@/components/main/MyFavorites.vue'
+import InvestorsVue from '@/components/main/InvestorsVue.vue'
+import MentorsVue from '@/components/main/MentorsVue.vue'
 
 export default {
     components: {
@@ -37,6 +34,21 @@ export default {
         MyFavorites,
         InvestorsVue,
         MentorsVue,
+    },
+    data() {
+        return {
+        }
+    },
+    methods: {
+        updateInStoreWidthBrows() {
+            this.$store.commit('updateWidthBrows');
+        }
+    },
+    created() {
+        window.addEventListener('resize', this.updateInStoreWidthBrows);
+    },
+    mounted() {
+        this.$store.commit('updateWidthBrows');
     }
 }
 </script>

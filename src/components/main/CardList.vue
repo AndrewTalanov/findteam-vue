@@ -19,15 +19,15 @@
             {{card.contentBody.slice(0, bodySlice) + threeDots}}
           </p>
           <div class="card__footer">
-            <img src="../assets/images/warning.png" alt="warn" />
+            <img src="@/assets/images/warning.png" alt="warn" />
             <img
               class="dontknow"
-              src="../assets/images/dontknow.png"
+              src="@/assets/images/dontknow.png"
               alt="warn"
             />
-            <img src="../assets/images/arrow_down.png" alt="down" />
+            <img src="@/assets/images/arrow_down.png" alt="down" />
             <p class="card__popularity">{{card.popularityCard}}</p>
-            <img src="../assets/images/arrow_up.png" alt="up" />
+            <img src="@/assets/images/arrow_up.png" alt="up" />
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default {
       cards: [
         {
           id: 1,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -55,7 +55,7 @@ export default {
         },
         {
           id: 2,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -64,7 +64,7 @@ export default {
         },
         {
           id: 3,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -73,7 +73,7 @@ export default {
         },
         {
           id: 4,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -82,7 +82,7 @@ export default {
         },
         {
           id: 5,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -91,7 +91,7 @@ export default {
         },
         {
           id: 6,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -100,7 +100,7 @@ export default {
         },
         {
           id: 7,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -109,7 +109,7 @@ export default {
         },
         {
           id: 8,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -118,7 +118,7 @@ export default {
         },
         {
           id: 9,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
@@ -127,7 +127,7 @@ export default {
         },
         {
           id: 10,
-          iconURL: require("../assets/images/card_icon.png") ,
+          iconURL: require("@/assets/images/card_icon.png") ,
           nameCard: "Партнер",
           nameProfile: "Александр",
           titleCard: "orem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sadorem ipsum dolor sit amet, elit. ff Integer enim urna sd Integerenim urna sd fsd dsf sad",
