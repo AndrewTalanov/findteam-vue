@@ -6,9 +6,7 @@
         v-for="item in items"
         :key="item.id"
         @click="
-          $store.commit('changeActive')
-          $store.state.active = item.id;
-          stateActive = item.id;
+          $store.commit('changeActive', item.id)
         "
         class="sidebar__item"
       >
@@ -34,8 +32,6 @@ export default {
       startTop: null,
       startDown: null,
       offset: null,
-      screenWidth: null,
-      stateActive: 2,
       items: [
         {
           id: 1,
@@ -76,59 +72,47 @@ export default {
     };  
   },
   methods: {
-    updateWidth() {
-      this.screenWidth = window.innerWidth;
-    },
     startHeight() {
-      if (this.screenWidth >= 1210) {
+      if (this.$store.state.widthBrows >= 1210) {
         this.startTop = 35;
         this.startDown = 115;
         this.offset = 80;
       }
-      else if ((this.screenWidth < 1210) && (this.screenWidth > 980)) {
+      else if ((this.$store.state.widthBrows < 1210) && (this.$store.state.widthBrows > 980)) {
         this.startTop = 50;
         this.startDown = 110;
         this.offset = 60;
       }
-      else if (this.screenWidth < 980) {
+      else if (this.$store.state.widthBrows < 980) {
         this.startTop = 25;
         this.startDown = 85;
         this.offset = 60;
       }
     },
-    sidebarTop() {
+    sidebarTopAndBot() {
       for (let i = 1; i <= this.items.length; i++) {
-        if (this.stateActive == i) {
+        if (this.$store.state.active == i) {
           this.heightTop = this.startTop + (i - 1) * this.offset;
-        }
-      }
-    },
-    sidebarDown() {
-      for (let i = 1; i <= this.items.length; i++) {
-        if (this.stateActive == i) {
           this.heightDown = this.startDown + (i - 1) * this.offset;
         }
       }
     },
   },
   created() {
-    window.addEventListener('resize', this.updateWidth);
     window.addEventListener('resize', this.startHeight);
-    window.addEventListener('resize', this.sidebarTop);
-    window.addEventListener('resize', this.sidebarDown);
+    window.addEventListener('resize', this.sidebarTopAndBot);
   },
   mounted() {
-    this.updateWidth();
     this.startHeight();
-    this.sidebarTop();
-    this.sidebarDown();
+    this.sidebarTopAndBot();
   },
-  watch() {
-    this.stateActive
+  watch: {
+    '$store.state.widthBrows': function(){
+      this.startHeight();
+    }
   },
   beforeUpdate() {
-    this.sidebarTop();
-    this.sidebarDown();
+    this.sidebarTopAndBot();
   },
 };
 </script>

@@ -6,8 +6,8 @@ export default createStore({
     widthBrows: null,
   },
   mutations: {
-    changeActive(state) {
-      return state.active
+    changeActive(state, id) {
+      return state.active = id
     },
     updateWidthBrows(state) {
       return state.widthBrows = window.innerWidth;

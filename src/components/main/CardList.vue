@@ -36,12 +36,12 @@
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core';
 export default {
   data() {
     return {
       bodySlice: null,
       titleSlice: null,
-      widthBrows: null,
       threeDots: "...",
       cards: [
         {
@@ -139,52 +139,52 @@ export default {
   },
   methods: {
     forThreeDots() {
-      if (this.widthBrows > 1840) {
+      if (this.$store.state.widthBrows > 1840) {
         this.bodySlice = 400
         this.titleSlice = 90
-      } else if (this.widthBrows > 1461) {
+      } else if (this.$store.state.widthBrows > 1461) {
         this.bodySlice = 370
         this.titleSlice = 80
-      } else if (this.widthBrows > 1249) {
+      } else if (this.$store.state.widthBrows > 1249) {
         this.bodySlice = 400
         this.titleSlice = 90
-      } else if (this.widthBrows > 1210) {
+      } else if (this.$store.state.widthBrows > 1210) {
         this.bodySlice = 370
         this.titleSlice = 60
-      } else if (this.widthBrows > 1072) {
+      } else if (this.$store.state.widthBrows > 1072) {
         this.bodySlice = 300
         this.titleSlice = 40
-      } else if (this.widthBrows > 981) {
+      } else if (this.$store.state.widthBrows > 981) {
         this.bodySlice = 250
         this.titleSlice = 40
-      } else if (this.widthBrows > 851) {
+      } else if (this.$store.state.widthBrows > 851) {
         this.bodySlice = 400
         this.titleSlice = 90
-      } else if (this.widthBrows > 750) {
+      } else if (this.$store.state.widthBrows > 750) {
         this.bodySlice = 380
         this.titleSlice = 60
-      } else if (this.widthBrows > 550) {
+      } else if (this.$store.state.widthBrows > 550) {
         this.bodySlice = 600
         this.titleSlice = 90
-      } else if (this.widthBrows > 420) {
+      } else if (this.$store.state.widthBrows > 420) {
         this.bodySlice = 400
         this.titleSlice = 50
-      } else if (this.widthBrows > 319) {
+      } else if (this.$store.state.widthBrows > 319) {
         this.bodySlice = 270
         this.titleSlice = 45
       }
     },
-    updateWidth() {
-      this.widthBrows = window.innerWidth;
-      this.forThreeDots();
-    }
   },
   created() {
-    window.addEventListener('resize', this.updateWidth);
     window.addEventListener('resize', this.forThreeDots);
   },
   mounted() {
-    this.updateWidth();
+    this.forThreeDots();
+  },
+  watch: {
+    '$store.state.widthBrows': function(){
+      this.forThreeDots();
+    }
   }
 };
 </script>
