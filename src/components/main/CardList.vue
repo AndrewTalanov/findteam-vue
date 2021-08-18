@@ -191,7 +191,7 @@ export default {
 
 <style scoped>
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   background-color: #0f2027;
 }
 ::-webkit-scrollbar-thumb {
