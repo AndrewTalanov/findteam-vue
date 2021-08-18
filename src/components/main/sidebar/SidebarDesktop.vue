@@ -13,7 +13,6 @@
         <img :src="item.url" alt="icon" class="sidebar__icon" />
         <p
           class="sidebar__name"
-          :class="{ active: $store.state.active === item.id }"
         >
           {{ item.name }}
         </p>
@@ -139,7 +138,6 @@ export default {
   height: 100%;
   position: absolute;
   /* Высота задается через скрипты */
-  /* top: 400px; */
   z-index: -1;
   background-color: #13272e;
   transition: 0.3s;
@@ -202,24 +200,5 @@ export default {
     padding: 10px 0 0 0;
   }
 }
-@media (max-width: 426px) {
-  .sidebar {
-    width: 100px;
-  }
-  .sidebar__name {
-    margin: 5px 0 0 0;
-    font-size: 10px;
-  }
-  .sidebar__icon {
-    width: 20px;
-  }
-}
-@media (max-width: 400px) {
-  .sidebar__name {
-    display: none;
-  }
-  .active {
-    display: block;
-  }
-}
+/* 500px отключаю сайдбар*/
 </style>

@@ -1,7 +1,8 @@
 <template>
     <vue-header></vue-header>
     <main>
-        <side-bar></side-bar>
+        <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>
+        <sidebar-mobile v-if="$store.state.widthBrows <= 500"></sidebar-mobile>
         <my-page v-if="$store.state.active == 1"></my-page>
         <card-list v-else-if="$store.state.active == 2"></card-list>
         <my-message v-else-if="$store.state.active == 3"></my-message>
@@ -14,7 +15,6 @@
 
 <script>
 import VueHeader from "@/components/header/VueHeader.vue"
-import SideBar from '@/components/main/sidebar/SideBar.vue'
 import CardList from '@/components/main/CardList.vue'
 import MyPage from '@/components/main/MyPage.vue'
 import MyMessage from '@/components/main/MyMessage.vue'
@@ -22,11 +22,12 @@ import MySub from '@/components/main/MySub.vue'
 import MyFavorites from '@/components/main/MyFavorites.vue'
 import InvestorsVue from '@/components/main/InvestorsVue.vue'
 import MentorsVue from '@/components/main/MentorsVue.vue'
+import SidebarMobile from '../components/main/sidebar/SidebarMobile.vue'
+import SidebarDesktop from '../components/main/sidebar/SidebarDesktop.vue'
 
 export default {
     components: {
         VueHeader,
-        SideBar,
         CardList,
         MyPage,
         MyMessage,
@@ -34,6 +35,8 @@ export default {
         MyFavorites,
         InvestorsVue,
         MentorsVue,
+        SidebarMobile,
+        SidebarDesktop,
     },
     data() {
         return {
