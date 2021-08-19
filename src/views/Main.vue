@@ -1,5 +1,6 @@
 <template>
-    <vue-header></vue-header>
+    <header-desktop v-if="$store.state.widthBrows > 500"></header-desktop>
+    <header-mobile v-if="$store.state.widthBrows <= 500"></header-mobile>
     <main>
         <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>
         <sidebar-mobile v-if="$store.state.widthBrows <= 500"></sidebar-mobile>
@@ -14,7 +15,8 @@
 </template>
 
 <script>
-import VueHeader from "@/components/header/VueHeader.vue"
+import HeaderDesktop from "@/components/header/HeaderDesktop.vue"
+import HeaderMobile from "@/components/header/HeaderMobile.vue"
 import CardList from '@/components/main/CardList.vue'
 import MyPage from '@/components/main/MyPage.vue'
 import MyMessage from '@/components/main/MyMessage.vue'
@@ -27,7 +29,8 @@ import SidebarDesktop from '../components/main/sidebar/SidebarDesktop.vue'
 
 export default {
     components: {
-        VueHeader,
+        HeaderDesktop,
+        HeaderMobile,
         CardList,
         MyPage,
         MyMessage,

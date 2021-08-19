@@ -108,7 +108,11 @@ export default {
   watch: {
     '$store.state.widthBrows': function(){
       this.startHeight();
+    },
+    '$store.state.active': function(){
+      this.sidebarTopAndBot();
     }
+    
   },
   beforeUpdate() {
     this.sidebarTopAndBot();

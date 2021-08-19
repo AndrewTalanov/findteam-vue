@@ -31,6 +31,9 @@
           </div>
         </div>
       </div>
+      <div class="mobile-bottom">
+      
+      </div>
     </div>
   </div>
 </template>
@@ -260,6 +263,9 @@ export default {
 .dontknow {
   margin: 0 10px 0 10px;
 }
+.mobile-bottom{
+  display: none;
+}
 @media (max-width: 1734px) {
   .card__title {
     margin-bottom: 6px;
@@ -331,6 +337,19 @@ export default {
 @media (max-width: 750px) {
   .card__inner {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .card__wrapper {
+    margin: 0 auto;
+  }
+  .card__inner {
+    margin: 0 0 0 0;
+  }
+  .mobile-bottom{
+    display: block;
+    width: 100%;
+    height: 10px;
   }
 }
 </style>
