@@ -87,12 +87,5 @@ export default {
     margin: 3px 0px 0 0;
   }
 }
-@media (max-width: 350px) {
-  .panel {
-    margin-right: 10px;
-  }
-  .button-filter {
-    margin-left: 5px;
-  }
-}
+
 </style>

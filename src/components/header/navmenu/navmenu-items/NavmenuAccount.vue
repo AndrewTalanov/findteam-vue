@@ -130,28 +130,5 @@ export default {};
     width: 55px;
   }
 }
-@media (max-width: 426px) {
-  .account__info {
-    margin-left: 10px;
-  }
-}
-@media (max-width: 380px) {
-  .account__avatar {
-    width: 45px;
-  }
-  .account__avatar,
-  .account__avatar-img {
-    border-radius: 10px;
-  }
-  .account__vip {
-    top: 6px;
-    left: 35px;
-  }
-}
-@media (max-width: 350px) {
-  .account__info {
-    width: 55px;
-    margin-left: 10px;
-  }
-}
+
 </style>

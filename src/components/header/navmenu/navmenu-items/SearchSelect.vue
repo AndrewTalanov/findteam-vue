@@ -140,24 +140,4 @@ export default {
     width: 300px;
   }
 }
-@media (max-width: 500px) {
-  .panel__search {
-    width: 250px;
-  }
-}
-@media (max-width: 450px) {
-  .panel__search {
-    width: 200px;
-  }
-}
-@media (max-width: 400px) {
-  .panel__search {
-    width: 170px;
-  }
-}
-@media (max-width: 350px) {
-  .panel__search {
-    margin-left: 5px;
-  }
-}
 </style>
