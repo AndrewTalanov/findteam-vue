@@ -16,6 +16,12 @@
           <div class="header-mobile__filter-button"  v-if="$store.state.active == 3">
               <img class="header-mobile__filter-images" src="@/assets/images/pencil.png" alt="filter">
           </div>
+          <p class="header-mobile__name-tab" v-else-if="$store.state.active == 6">
+              Инвесторы
+          </p>
+          <div class="header-mobile__filter-button"  v-if="$store.state.active == 6">
+              <img class="header-mobile__filter-images" src="@/assets/images/filter.png" alt="filter">
+          </div>
       </div>
   </div>
 </template>
