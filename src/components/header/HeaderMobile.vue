@@ -19,7 +19,13 @@
           <p class="header-mobile__name-tab" v-else-if="$store.state.active == 6">
               Инвесторы
           </p>
+          <p class="header-mobile__name-tab" v-if="$store.state.active == 7">
+              Менторы
+          </p>
           <div class="header-mobile__filter-button"  v-if="$store.state.active == 6">
+              <img class="header-mobile__filter-images" src="@/assets/images/filter.png" alt="filter">
+          </div>
+          <div class="header-mobile__filter-button"  v-if="$store.state.active == 7">
               <img class="header-mobile__filter-images" src="@/assets/images/filter.png" alt="filter">
           </div>
       </div>
@@ -30,20 +36,6 @@
 export default {
     data() {
         return {
-            items: [
-                {
-                    id: 2,
-                    title: "Публикации"
-                },
-                {
-                    id: 3,
-                    title: "Сообщения"
-                },
-                {
-                    id: 1,
-                    title: "Профиль"
-                }
-            ]
         }
     }
 }

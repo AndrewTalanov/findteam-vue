@@ -144,14 +144,7 @@ export default {
 </script>
 
 <style scoped>
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: #0f2027;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #1e3740;
-  border-radius: 9em;
-}
+
 .card__wrapper {
   width: 100%;
   height: 90vh;
@@ -300,7 +293,7 @@ export default {
   .mobile-bottom{
     display: block;
     width: 100%;
-    height: 10px;
+    height: 40px;
   }
 }
 </style>

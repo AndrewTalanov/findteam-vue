@@ -36,11 +36,17 @@ export default {
                 this.bodySlice = 600
                 this.titleSlice = 90
             } else if (this.$store.state.widthBrows > 420) {
+                this.bodySlice = 480
+                this.titleSlice = 80
+            } else if (this.$store.state.widthBrows > 400) {
+                this.bodySlice = 440
+                this.titleSlice = 80
+            } else if (this.$store.state.widthBrows > 340) {
                 this.bodySlice = 400
-                this.titleSlice = 50
+                this.titleSlice = 65
             } else if (this.$store.state.widthBrows > 319) {
-                this.bodySlice = 270
-                this.titleSlice = 45
+                this.bodySlice = 340
+                this.titleSlice = 65
             }
         },
     },

@@ -10,7 +10,7 @@ export default createStore({
       return state.active = id
     },
     updateWidthBrows(state) {
-      return state.widthBrows = window.innerWidth;
+      return state.widthBrows = document.documentElement.clientWidth;
     }  
   },
   actions: {
