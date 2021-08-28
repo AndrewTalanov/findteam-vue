@@ -5,6 +5,7 @@
         class="card__item"
         v-for="card in cards"
         :key="card.id"
+        @click="$store.commit('openCard')"
       >
         <div class="card__content">
           <div class="card__header">
@@ -35,14 +36,19 @@
       
       </div>
     </div>
+    <open-card v-if="$store.state.show">
+
+    </open-card>
   </div>
 </template>
 
 <script>
 import { computed } from '@vue/runtime-core';
 import cutContentCard from '@/mixins/cutContentCard';
+import OpenCard from '@/components/main/OpenCard.vue';
 
 export default {
+  components: { OpenCard },
   mixins: [cutContentCard],
   data() {
     return {
@@ -159,12 +165,18 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 30px;
+  padding: 2px;
 }
 .card__item {
   border-radius: 30px;
   background-color: #1c3844;
   height: 380px;
   margin-bottom: 15px;
+  transition: .6s;
+  cursor: pointer;
+}
+.card__item:hover{
+  box-shadow: 0px 0px 5px rgb(231, 206, 206);
 }
 .card__header img {
   width: 18px;

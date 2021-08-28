@@ -100,12 +100,18 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 30px;
+  padding: 2px;
 }
 .mentors__item {
   border-radius: 30px;
   background-color: #1c3844;
   height: 380px;
   margin-bottom: 15px;
+  transition: .6s;
+  cursor: pointer;
+}
+.mentors__item:hover{
+  box-shadow: 0px 0px 5px rgb(231, 206, 206);
 }
 .mentors__content {
   width: 90%;
