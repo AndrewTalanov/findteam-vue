@@ -6,7 +6,7 @@
           <div class="open-card__profile">
             <img src="@/assets/images/navmenu-avatar.png" alt="avatar" />
             <div class="open-card__profile-name">
-              <p>Алексей Мистахов</p>
+              <p>{{$store.state.getContent.nameProfile}}</p>
             </div>
           </div>
           <div class="open-card__background-close">
@@ -19,125 +19,11 @@
           </div>
         </div>
         <div class="open-card__content-text">
+            <div class="open-card__title">
+                <p>{{$store.state.getContent.title}}</p>
+            </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetff adipiscing elit. Integerenim
-            urna, interdum sit amet tempor et, accumsan vitae libero.
-            Nullafacilisi. Praesent a odio eget arcu pharetra ullamcorper. Sed
-            acpellentesque enim. fs fdsaf sd ffads fdszf asdf dsf dsaf asdf
-            fsffdasf Lorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integer enim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nulla facilisi. Praesent aLorem ipsum dolor sit amet,
-            consectetff adipiscing elit. Integerenim urna, interdum sit amet
-            tempor et, accumsan vitae libero. Nullafacilisi. Praesent a odio
-            eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs fdsaf sd
-            ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet,
-            consectetff adipiscing elit. Integer enim urna, interdum sit amet
-            tempor et, accumsan vitae libero. Nulla facilisi. Praesent aLorem
-            ipsum dolor sit amet, consectetff adipiscing elit. Integerenim urna,
-            interdum sit amet tempor et, accumsan vitae libero. Nullafacilisi.
-            Praesent a odio eget arcu pharetra ullamcorper. Sed acpellentesque
-            enim. fs fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem
-            ipsum dolor sit amet, consectetff adipiscing elit. Integer enim
-            urna, interdum sit amet tempor et, accumsan vitae libero. Nulla
-            facilisi. Praesent aLorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integerenim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nullafacilisi. Praesent a odio eget arcu
-            pharetra ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads
-            fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet,
-            consectetff adipiscing elit. Integer enim urna, interdum sit amet
-            tempor et, accumsan vitae libero. Nulla facilisi. Praesent aLorem
-            ipsum dolor sit amet, consectetff adipiscing elit. Integerenim urna,
-            interdum sit amet tempor et, accumsan vitae libero. Nullafacilisi.
-            Praesent a odio eget arcu pharetra ullamcorper. Sed acpellentesque
-            enim. fs fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem
-            ipsum dolor sit amet, consectetff adipiscing elit. Integer enim
-            urna, interdum sit amet tempor et, accumsan vitae libero. Nulla
-            facilisi. Praesent aLorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integerenim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nullafacilisi. Praesent a odio eget arcu
-            pharetra ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads
-            fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet,
-            consectetff adipiscing elit. Integer enim urna, interdum sit amet
-            tempor et, accumsan vitae libero. Nulla facilisi. Praesent aLorem
-            ipsum dolorLorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolorLorem ipsum dolor sit amet, consectetff adipiscing
-            elit. Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolor sit amet, consectetff adipiscing elit.
-            Integerenim urna, interdum sit amet tempor et, accumsan vitae
-            libero. Nullafacilisi. Praesent a odio eget arcu pharetra
-            ullamcorper. Sed acpellentesque enim. fs fdsaf sd ffads fdszf asdf
-            dsf dsaf asdf fsffdasf Lorem ipsum dolor sit amet, consectetff
-            adipiscing elit. Integer enim urna, interdum sit amet tempor et,
-            accumsan vitae libero. Nulla facilisi. Praesent aLorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integerenim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nullafacilisi. Praesent a
-            odio eget arcu pharetra ullamcorper. Sed acpellentesque enim. fs
-            fdsaf sd ffads fdszf asdf dsf dsaf asdf fsffdasf Lorem ipsum dolor
-            sit amet, consectetff adipiscing elit. Integer enim urna, interdum
-            sit amet tempor et, accumsan vitae libero. Nulla facilisi. Praesent
-            aLorem ipsum dolor
+            {{$store.state.getContent.body}}
           </p>
         </div>
         <div class="open-card__footer">
@@ -145,7 +31,7 @@
             <img src="@/assets/images/warning.png" alt="warn" />
             <img src="@/assets/images/dontknow.png" alt="izb" />
             <img src="@/assets/images/arrow_down.png" alt="down" />
-            <p>999</p>
+            <p>{{$store.state.getContent.popularity}}</p>
             <img src="@/assets/images/arrow_up.png" alt="up" />
           </div>
         </div>
@@ -251,8 +137,14 @@ export default {
     }
 }
 .open-card__content-text {
-  height: 86%;
+  height: 85%;
   overflow-y: scroll;
+}
+.open-card__title{
+    margin-bottom: 15px;
+}
+.open-card__title p{
+    font-size: 20px;
 }
 .open-card__footer {
   width: 100%;

@@ -1,10 +1,14 @@
 import { createStore } from 'vuex'
+import { getCardContent } from './getCardContent';
+import { listCardAdverts } from './listCardAdverts';
+import { listCardMentors } from './listCardMentors';
 
 export default createStore({
   state: {
     active: 2,
     widthBrows: null,
-    show: false,
+    showAdverts: false,
+    showMentors: false,
   },
   mutations: {
     changeActive(state, id) {
@@ -14,12 +18,16 @@ export default createStore({
       return state.widthBrows = document.documentElement.clientWidth;
     },
     openCard(state) {
-      if (state.show === false) {
-        state.show = true
-      } else {
-        state.show = false
+      if ((state.showAdverts === false && state.active == 2)) {
+        state.showAdverts = true
+      } else if ((state.showMentors === false && state.active == 7)) {
+        state.showMentors = true
+      } else if ((state.showAdverts === true && state.active == 2)){
+        state.showAdverts = false
+      } else if ((state.showMentors === true && state.active == 7)){
+        state.showMentors = false
       }
-      return state.show
+      
     }  
   },
   actions: {
@@ -27,5 +35,8 @@ export default createStore({
   getters: {
   },
   modules: {
+    adverts: listCardAdverts,
+    getContent: getCardContent,
+    mentors: listCardMentors
   }
 })

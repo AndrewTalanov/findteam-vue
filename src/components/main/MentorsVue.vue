@@ -1,7 +1,12 @@
 <template>
   <div class="mentors__wrapper">
     <div class="mentors__inner">
-      <div class="mentors__item" v-for="card in cards" :key="card.id">
+      <div
+        class="mentors__item"
+        v-for="card in cards"
+        :key="card.id"
+        @click="$store.commit('openCard')"
+      >
         <div class="mentors__content">
           <div class="mentors__header">
             <img :src="card.iconURL" alt="icon" />
@@ -23,13 +28,16 @@
       </div>
       <div class="mobile-bottom"></div>
     </div>
+    <open-card v-if="$store.state.showMentors"> </open-card>
   </div>
 </template>
 
 <script>
-import cutCardMentorsAndInvestors from '@/mixins/cutCardMentorsAndInvestors';
+import cutCardMentorsAndInvestors from "@/mixins/cutCardMentorsAndInvestors";
+import OpenCard from '@/components/main/OpenCard.vue';
 export default {
   mixins: [cutCardMentorsAndInvestors],
+  components: { OpenCard },
   data() {
     return {
       cards: [
@@ -79,9 +87,8 @@ export default {
           sum: "30000",
         },
       ],
-    }
+    };
   },
-
 };
 </script>
 
@@ -107,10 +114,10 @@ export default {
   background-color: #1c3844;
   height: 380px;
   margin-bottom: 15px;
-  transition: .6s;
+  transition: 0.6s;
   cursor: pointer;
 }
-.mentors__item:hover{
+.mentors__item:hover {
   box-shadow: 0px 0px 5px rgb(231, 206, 206);
 }
 .mentors__content {
@@ -151,7 +158,7 @@ export default {
 }
 .mentors__footer {
   position: absolute;
-  bottom: 40px;   
+  bottom: 40px;
   right: 10px;
 }
 .mentors__footer p {
