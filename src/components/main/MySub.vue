@@ -1,6 +1,6 @@
 <template>
-    <div class="sub__wrapper">
-
+    <div class="sub__wrapper all-tab__wrapper">
+        <div class="sub__inner all-tab__inner all-tab__with-cards"></div>
     </div>
 </template>
 
@@ -12,8 +12,6 @@ export default {
 
 <style scoped>
     .sub__wrapper{
-        width: 100%;
-        height: 90vh;
         background-color: green;
     }
 </style>

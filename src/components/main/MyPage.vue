@@ -1,5 +1,7 @@
 <template>
-    <div class="page__wrapper"></div>
+    <div class="page__wrapper all-tab__wrapper">
+        <div class="page__inner all-tab__inner"></div>
+    </div>
 </template>
 
 <script>
@@ -10,8 +12,6 @@ export default {
 
 <style scoped>
     .page__wrapper{
-        width: 100%;
-        height: 90vh;
         background-color: red;
     }
 </style>

@@ -27,7 +27,7 @@ export default {
                 this.bodySlice = 220;
                 this.spheraSlice = 30;
             } else if (this.$store.state.widthBrows > 851) {
-                this.bodySlice = 400;
+                this.bodySlice = 390;
                 this.spheraSlice = 90;
             } else if (this.$store.state.widthBrows > 750) {
                 this.bodySlice = 300;

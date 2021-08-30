@@ -16,7 +16,7 @@ export default {
                 this.titleSlice = 80
             } else if (this.$store.state.widthBrows > 1249) {
                 this.bodySlice = 400
-                this.titleSlice = 90
+                this.titleSlice = 85
             } else if (this.$store.state.widthBrows > 1210) {
                 this.bodySlice = 370
                 this.titleSlice = 60

@@ -1,5 +1,7 @@
 <template>
-    <div class="message__wrapper"></div>
+    <div class="message__wrapper all-tab__wrapper">
+        <div class="message__wrapper all-tab__inner"></div>
+    </div>
 </template>
 
 <script>
@@ -10,8 +12,6 @@ export default {
 
 <style scoped>
     .message__wrapper{
-        width: 100%;
-        height: 90vh;
         background-color: blue;
     }
 </style>

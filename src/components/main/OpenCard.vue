@@ -9,12 +9,11 @@
               <p>{{$store.state.getContent.nameProfile}}</p>
             </div>
           </div>
-          <div class="open-card__background-close">
+          <div class="open-card__background-close" @click="$store.commit('openCard')">
             <img
               src="@/assets/images/add-card.png"
               alt="close"
               class="open-card__btn-close"
-              @click="$store.commit('openCard')"
             />
           </div>
         </div>
@@ -67,20 +66,7 @@ export default {
   width: 98%;
   height: 96.5%;
   border-radius: 30px;
-  animation-name: bigWidth;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
-@keyframes bigWidth {
-    from {
-        width: 50%;
-    }
-    to {
-        width: 98%;
-    }
-}
-
 .open-card__content-wrapper {
   width: 1123px;
   height: 96%;
@@ -116,25 +102,7 @@ export default {
 .open-card__btn-close {
   width: 65%;
   margin-left: 2px;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-name: rotate;
-}
-.open-card__background-close:hover{
-    transition: .4s;
-    box-shadow: 0px 0px 5px rgb(231, 206, 206);
-}
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    40% {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(45deg);
-    }
+  transform: rotate(45deg);
 }
 .open-card__content-text {
   height: 85%;

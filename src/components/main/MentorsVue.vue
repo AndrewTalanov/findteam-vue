@@ -1,8 +1,8 @@
 <template>
-  <div class="mentors__wrapper">
-    <div class="mentors__inner">
+  <div class="mentors__wrapper all-tab__wrapper">
+    <div class="mentors__inner all-tab__inner all-tab__with-cards">
       <div
-        class="mentors__item"
+        class="mentors__item all-card__item"
         v-for="card in cards"
         :key="card.id"
         @click="$store.commit('openCard')"
@@ -93,33 +93,6 @@ export default {
 </script>
 
 <style scoped>
-.mentors__wrapper {
-  width: 100%;
-  height: 90vh;
-}
-.mentors__inner {
-  border-radius: 20px;
-  width: 90%;
-  height: 95%;
-  overflow-x: hidden;
-  margin: 0 auto;
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 30px;
-  padding: 2px;
-}
-.mentors__item {
-  border-radius: 30px;
-  background-color: #1c3844;
-  height: 380px;
-  margin-bottom: 15px;
-  transition: 0.6s;
-  cursor: pointer;
-}
-.mentors__item:hover {
-  box-shadow: 0px 0px 5px rgb(231, 206, 206);
-}
 .mentors__content {
   width: 90%;
   height: 100%;
@@ -167,66 +140,17 @@ export default {
 .mobile-bottom {
   display: none;
 }
-@media (max-width: 1700px) {
-  .mentors__inner {
-    width: 95%;
-  }
-}
-@media (max-width: 1595px) {
-  .mentors__inner {
-    grid-column-gap: 15px;
-  }
-}
 @media (max-width: 1550px) {
   .mentors__inner {
     margin-top: 20px;
-    grid-column-gap: 20px;
-  }
-  .mentors__item {
-    margin-bottom: 20px;
   }
   .mentors__body {
     font-size: 15px;
   }
 }
 @media (max-width: 1461px) {
-  .mentors__inner {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 30px;
-  }
-  .mentors__item {
-    margin-bottom: 30px;
-  }
   .mentors__body {
     font-size: 16px;
-  }
-}
-@media (max-width: 1440px) {
-  .mentors__inner {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    width: 98%;
-  }
-  .mentors__item {
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 1210px) {
-  .mentors__item {
-    height: 330px;
-  }
-}
-@media (max-width: 981px) {
-  .mentors__inner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .mentors__item {
-    height: 350px;
-  }
-}
-@media (max-width: 750px) {
-  .mentors__inner {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 500px) {
