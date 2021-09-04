@@ -1,5 +1,5 @@
 <template>
-  <div class="header-mobile__wrapper">
+  <div class="header-mobile__wrapper" :class="{closeheader: $store.state.closeHeaderMobile}">
       <div class="header-mobile__inner">
           <p class="header-mobile__name-tab" v-if="$store.state.active == 2">
               Публикации
@@ -43,8 +43,10 @@ export default {
 
 <style scoped>
     .header-mobile__wrapper{
+        transition: .4s;
         width: 100%;
         height: 60px;
+        margin-bottom: 20px;
     }
     .header-mobile__inner{
         margin: 0 auto;
@@ -70,5 +72,10 @@ export default {
     .header-mobile__filter-images{
         width: 14px;
         height: 14px;
+    }
+    .closeheader{
+        height: 0;
+        opacity: 0;
+        margin-bottom: 0;
     }
 </style>

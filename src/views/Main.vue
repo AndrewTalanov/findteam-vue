@@ -2,7 +2,7 @@
   <header-desktop v-if="$store.state.widthBrows > 500"></header-desktop>
   <header-mobile v-if="$store.state.widthBrows <= 500"></header-mobile>
   <main>
-    <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>
+    <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>    
     <sidebar-mobile v-if="$store.state.widthBrows <= 500"></sidebar-mobile>
     <my-page v-if="$store.state.active == 1"></my-page>
     <card-list v-else-if="$store.state.active == 2"></card-list>
@@ -51,6 +51,11 @@ export default {
   },
   created() {
     window.addEventListener("resize", this.updateInStoreWidthBrows);
+  },
+  watch: {
+    "$store.state.active": function() {
+      this.$store.commit("onlyCloseCard");
+    }
   },
   mounted() {
     this.$store.commit("updateWidthBrows");
@@ -131,6 +136,7 @@ html {
 @media (max-width: 500px) {
   .all-tab__wrapper {
     margin: 0 auto;
+    height: 96vh;
   }
   .all-tab__inner {
     width: 99%;

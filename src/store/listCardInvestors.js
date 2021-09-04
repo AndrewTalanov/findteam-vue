@@ -1,4 +1,4 @@
-export const listCardMentors = {
+export const listCardInvestors = {
     state: {
         cards: [
             {

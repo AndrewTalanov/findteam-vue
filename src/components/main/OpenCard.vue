@@ -6,10 +6,13 @@
           <div class="open-card__profile">
             <img src="@/assets/images/navmenu-avatar.png" alt="avatar" />
             <div class="open-card__profile-name">
-              <p>{{$store.state.getContent.nameProfile}}</p>
+              <p>{{ $store.state.getContent.nameProfile }}</p>
             </div>
           </div>
-          <div class="open-card__background-close" @click="$store.commit('openCard')">
+          <div
+            class="open-card__background-close"
+            @click="$store.commit('openCard')"
+          >
             <img
               src="@/assets/images/add-card.png"
               alt="close"
@@ -18,19 +21,22 @@
           </div>
         </div>
         <div class="open-card__content-text">
-            <div class="open-card__title">
-                <p>{{$store.state.getContent.title}}</p>
-            </div>
+          <div class="open-card__title" v-if="$store.state.active == 2">
+            <p>{{ $store.state.getContent.title }}</p>
+          </div>
           <p>
-            {{$store.state.getContent.body}}
+            {{ $store.state.getContent.body }}
           </p>
         </div>
         <div class="open-card__footer">
-          <div class="open-card__footer-content">
+          <div
+            class="open-card__footer-content"
+            v-if="$store.state.active == 2"
+          >
             <img src="@/assets/images/warning.png" alt="warn" />
             <img src="@/assets/images/dontknow.png" alt="izb" />
             <img src="@/assets/images/arrow_down.png" alt="down" />
-            <p>{{$store.state.getContent.popularity}}</p>
+            <p>{{ $store.state.getContent.popularity }}</p>
             <img src="@/assets/images/arrow_up.png" alt="up" />
           </div>
         </div>
@@ -54,22 +60,21 @@ export default {
 <style scoped>
 .open-card__wrapper {
   margin: auto;
-  width: 83%;
-  height: 90vh;
   position: absolute;
   bottom: 0;
   right: 0;
+  left: 0;
+  top: 0;
 }
 .open-card__inner {
   background-color: #264d5c;
-  margin-top: 30px;
-  width: 98%;
-  height: 96.5%;
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
 }
 .open-card__content-wrapper {
-  width: 1123px;
-  height: 96%;
+  width: 75%;
+  height: 100%;
   background-color: #1c3844;
   border-radius: 30px;
   padding: 20px;
@@ -108,11 +113,11 @@ export default {
   height: 85%;
   overflow-y: scroll;
 }
-.open-card__title{
-    margin-bottom: 15px;
+.open-card__title {
+  margin-bottom: 15px;
 }
-.open-card__title p{
-    font-size: 20px;
+.open-card__title p {
+  font-size: 20px;
 }
 .open-card__footer {
   width: 100%;
@@ -128,4 +133,5 @@ export default {
   width: 15%;
   justify-content: space-between;
 }
+
 </style>
