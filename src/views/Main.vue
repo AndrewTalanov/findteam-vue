@@ -2,7 +2,7 @@
   <header-desktop v-if="$store.state.widthBrows > 500"></header-desktop>
   <header-mobile v-if="$store.state.widthBrows <= 500"></header-mobile>
   <main>
-    <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>    
+    <sidebar-desktop v-if="$store.state.widthBrows > 500"></sidebar-desktop>
     <sidebar-mobile v-if="$store.state.widthBrows <= 500"></sidebar-mobile>
     <my-page v-if="$store.state.active == 1"></my-page>
     <card-list v-else-if="$store.state.active == 2"></card-list>
@@ -53,9 +53,9 @@ export default {
     window.addEventListener("resize", this.updateInStoreWidthBrows);
   },
   watch: {
-    "$store.state.active": function() {
+    "$store.state.active": function () {
       this.$store.commit("onlyCloseCard");
-    }
+    },
   },
   mounted() {
     this.$store.commit("updateWidthBrows");
@@ -136,7 +136,7 @@ html {
 @media (max-width: 500px) {
   .all-tab__wrapper {
     margin: 0 auto;
-    height: 96vh;
+    height: 97vh;
   }
   .all-tab__inner {
     width: 99%;
@@ -150,6 +150,9 @@ html {
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 30px;
   padding: 2px 4% 2px 4%;
+}
+.mobile-bottom {
+  display: none;
 }
 @media (max-width: 1700px) {
   .all-tab__with-cards {
@@ -194,9 +197,16 @@ html {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+@media (max-width: 500px) {
+  .mobile-bottom {
+    display: block;
+    width: 100%;
+    height: 20px;
+  }
+}
 
 /* для карточек */
-.all-card__item{
+.all-card__item {
   border-radius: 30px;
   background-color: #1c3844;
   height: 380px;

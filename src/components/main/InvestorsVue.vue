@@ -1,6 +1,6 @@
 <template>
   <div class="investors__wrapper all-tab__wrapper">
-    <div class="investors__inner all-tab__inner all-tab__with-cards" @wheel="wheel">
+    <div class="investors__inner all-tab__inner all-tab__with-cards" @wheel="wheel" :style="{'margin-top': scrollDekstop + 'px', transition: 0.4 + 's'}">
       <div
         class="investors__item all-card__item"
         v-for="card in $store.state.investors.cards"
@@ -49,8 +49,9 @@
 import cutCardMentorsAndInvestors from "@/mixins/cutCardMentorsAndInvestors";
 import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader"
 import OpenCard from "@/components/main/OpenCard.vue";
+import scrollDesktop from "@/mixins/scrollDesktop";
 export default {
-  mixins: [cutCardMentorsAndInvestors, scrollCloseOpenMobileHeader],
+  mixins: [cutCardMentorsAndInvestors, scrollCloseOpenMobileHeader, scrollDesktop],
   components: { OpenCard },
   data() {
     return {
@@ -104,9 +105,6 @@ export default {
 .investors__footer p {
   margin-top: 5px;
 }
-.mobile-bottom {
-  display: none;
-}
 @media (max-width: 1550px) {
   .investors__body {
     font-size: 15px;
@@ -123,11 +121,6 @@ export default {
   }
   .investors__inner {
     margin: 0 0 0 0;
-  }
-  .mobile-bottom {
-    display: block;
-    width: 100%;
-    height: 40px;
   }
 }
 </style>

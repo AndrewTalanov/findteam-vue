@@ -1,6 +1,6 @@
 <template>
   <div class="card__wrapper all-tab__wrapper">
-    <div class="card__inner all-tab__inner all-tab__with-cards" @wheel="wheel">
+    <div class="card__inner all-tab__inner all-tab__with-cards" @wheel="wheel" :style="{'margin-top': scrollDekstop + 'px', transition: 0.4 + 's'}">
       <div
         class="card__item all-card__item"
         v-for="card in $store.state.adverts.cards"
@@ -45,24 +45,26 @@
           </div>
         </div>
       </div>
+      <div class="mobile-bottom"></div>
     </div>
     <open-card v-if="$store.state.showCard"> </open-card>
   </div>
 </template>
 
 <script>
-import { computed } from "@vue/runtime-core";
+import { computed, watch } from "@vue/runtime-core";
 import cutContentCard from "@/mixins/cutContentCard";
 import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader"
 import OpenCard from "@/components/main/OpenCard.vue";
+import scrollDesktop from "@/mixins/scrollDesktop";
 
 export default {
   components: { OpenCard },
-  mixins: [cutContentCard, scrollCloseOpenMobileHeader],
+  mixins: [cutContentCard, scrollCloseOpenMobileHeader, scrollDesktop],
   data() {
     return {
     };
-  }
+  },
 };
 </script>
 

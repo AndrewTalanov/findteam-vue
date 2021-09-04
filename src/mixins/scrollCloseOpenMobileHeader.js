@@ -9,7 +9,7 @@ export default {
                 this.$store.commit('openHeader')
             } else if (ev.deltaY > 0) {
                 this.$store.commit('closeHeader')
-            }
+            } 
         }
     },
     created() {
