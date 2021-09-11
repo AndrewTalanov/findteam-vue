@@ -109,7 +109,7 @@ html {
 /* для табов */
 .all-tab__wrapper {
   width: 100%;
-  height: 90vh;
+  height: 93vh;
 }
 .all-tab__inner {
   width: 90%;

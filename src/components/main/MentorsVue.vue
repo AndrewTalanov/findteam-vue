@@ -1,28 +1,33 @@
 <template>
   <div class="mentors__wrapper all-tab__wrapper">
-    <div class="mentors__inner all-tab__inner all-tab__with-cards" @wheel="wheel" :style="{'margin-top': scrollDekstop + 'px', transition: 0.4 + 's'}">
+    <div
+      class="mentors__inner all-tab__inner all-tab__with-cards"
+      v-show="!$store.state.showCard"
+      @wheel="wheel"
+      :style="{ 'margin-top': scrollDekstop + 'px', transition: 0.4 + 's' }"
+    >
       <div
         class="mentors__item all-card__item"
         v-for="card in $store.state.mentors.cards"
         :key="card.id"
         @click="
           $store.commit('openCard'),
-          $store.commit('changeContentState', [
-            card.id,
-            card.iconURL,
-            (card.nameCard = null),
-            card.nameProfile,
-            (card.titleCard = null),
-            card.contentBody,
-            (card.popularityCard = null),
-            card.sphera,
-            card.sum,
-          ])
+            $store.commit('changeContentState', [
+              card.id,
+              card.iconURL,
+              (card.nameCard = null),
+              card.nameProfile,
+              (card.titleCard = null),
+              card.contentBody,
+              (card.popularityCard = null),
+              card.sphera,
+              card.sum,
+            ])
         "
       >
         <div class="mentors__content">
           <div class="mentors__header">
-            <img :src="card.iconURL" alt="icon">
+            <img :src="card.iconURL" alt="icon" />
             <p class="mentors__profile">{{ card.nameProfile }}</p>
             <div class="mentors__menu">
               <div class="dot"></div>
@@ -47,15 +52,18 @@
 
 <script>
 import cutCardMentorsAndInvestors from "@/mixins/cutCardMentorsAndInvestors";
-import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader"
+import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader";
 import OpenCard from "@/components/main/OpenCard.vue";
 import scrollDesktop from "@/mixins/scrollDesktop";
 export default {
-  mixins: [cutCardMentorsAndInvestors, scrollCloseOpenMobileHeader, scrollDesktop],
+  mixins: [
+    cutCardMentorsAndInvestors,
+    scrollCloseOpenMobileHeader,
+    scrollDesktop,
+  ],
   components: { OpenCard },
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
@@ -113,6 +121,11 @@ export default {
 @media (max-width: 1461px) {
   .mentors__body {
     font-size: 16px;
+  }
+}
+@media (max-width: 750px) {
+  .mentors__footer {
+    left: 0;
   }
 }
 @media (max-width: 500px) {

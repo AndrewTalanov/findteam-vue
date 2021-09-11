@@ -1,30 +1,34 @@
 <template>
   <div class="card__wrapper all-tab__wrapper">
-    <div class="card__inner all-tab__inner all-tab__with-cards" @wheel="wheel" :style="{'margin-top': scrollDekstop + 'px', transition: 0.4 + 's'}">
+    <div
+      class="card__inner all-tab__inner all-tab__with-cards"
+      @wheel="wheel"
+      :style="{ 'margin-top': scrollDekstop + 'px', transition: 0.4 + 's' }"
+      v-show="!$store.state.showCard"
+    >
       <div
         class="card__item all-card__item"
         v-for="card in $store.state.adverts.cards"
         :key="card.id"
         @click="
           $store.commit('openCard'),
-          $store.commit('changeContentState', [
-            card.id,
-            card.iconURL,
-            card.nameCard,
-            card.nameProfile,
-            card.titleCard,
-            card.contentBody,
-            card.popularityCard,
-            (card.sphera = null),
-            (card.sum = null),
-          ])
+            $store.commit('changeContentState', [
+              card.id,
+              card.iconURL,
+              card.nameCard,
+              card.nameProfile,
+              card.titleCard,
+              card.contentBody,
+              card.popularityCard,
+              (card.sphera = null),
+              (card.sum = null),
+            ])
         "
       >
         <div class="card__content">
           <div class="card__header">
             <img :src="card.iconURL" alt="icon" />
-            <p class="card__name">{{ card.nameCard }}</p>
-            <p class="card__profile">{{ card.nameProfile }}</p>
+            <p class="card__name">Нужен {{ card.nameCard }}</p>
           </div>
           <p class="card__title">
             {{ card.titleCard.slice(0, titleSlice) + threeDots }}
@@ -54,7 +58,7 @@
 <script>
 import { computed, watch } from "@vue/runtime-core";
 import cutContentCard from "@/mixins/cutContentCard";
-import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader"
+import scrollCloseOpenMobileHeader from "@/mixins/scrollCloseOpenMobileHeader";
 import OpenCard from "@/components/main/OpenCard.vue";
 import scrollDesktop from "@/mixins/scrollDesktop";
 
@@ -62,8 +66,7 @@ export default {
   components: { OpenCard },
   mixins: [cutContentCard, scrollCloseOpenMobileHeader, scrollDesktop],
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
@@ -87,6 +90,7 @@ export default {
 .card__name {
   margin: 0 5px 0 10px;
   font-weight: 700;
+  font-size: 13px;
 }
 .card__title {
   font-size: 18px;

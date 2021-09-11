@@ -20,6 +20,25 @@
             />
           </div>
         </div>
+        <!-- header для мобилок -->
+        <div class="open-card__header header-mobile">
+          <div
+            class="open-card__background-close"
+            @click="$store.commit('openCard')"
+          >
+            <img
+              src="@/assets/images/close-arrow.png"
+              alt="close"
+              class="open-card__btn-close"
+            />
+          </div>
+          <div class="header-mobile__parametres">
+            <img src="@/assets/images/comments.png" alt="com" />
+            <img src="@/assets/images/warning.png" alt="warn" />
+            <img src="@/assets/images/dontknow.png" alt="izb" />
+          </div>
+        </div>
+        <!-- --- -->
         <div class="open-card__content-text">
           <div class="open-card__title" v-if="$store.state.active == 2">
             <p>{{ $store.state.getContent.title }}</p>
@@ -27,18 +46,11 @@
           <p>
             {{ $store.state.getContent.body }}
           </p>
+          <div class="for-mobile"></div>
         </div>
-        <div class="open-card__footer">
-          <div
-            class="open-card__footer-content"
-            v-if="$store.state.active == 2"
-          >
-            <img src="@/assets/images/warning.png" alt="warn" />
-            <img src="@/assets/images/dontknow.png" alt="izb" />
-            <img src="@/assets/images/arrow_down.png" alt="down" />
-            <p>{{ $store.state.getContent.popularity }}</p>
-            <img src="@/assets/images/arrow_up.png" alt="up" />
-          </div>
+        <div class="open-card__footer" v-show="$store.state.active == 2">
+          <footer-desktop/>
+          <footer-mobile/>
         </div>
       </div>
     </div>
@@ -47,8 +59,14 @@
 
 <script>
 import { watch } from "@vue/runtime-core";
+import FooterMobile from "@/components/main/openCard/FooterMobile"
+import FooterDesktop from '@/components/main/openCard/FooterDesktop';
 export default {
   name: "open-card",
+  components: {
+    FooterMobile,
+    FooterDesktop
+  },
   data() {
     return {
       showCard: false,
@@ -58,13 +76,21 @@ export default {
 </script>
 
 <style scoped>
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #18303b;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1c3844;
+  border-radius: 9em;
+}
 .open-card__wrapper {
   margin: auto;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
+  right: 10px;
+  top: 120px;
+  left: 300px;
+  height: 85vh;
 }
 .open-card__inner {
   background-color: #264d5c;
@@ -77,10 +103,9 @@ export default {
   height: 100%;
   background-color: #1c3844;
   border-radius: 30px;
-  padding: 20px;
 }
 .open-card__header {
-  margin-bottom: 15px;
+  padding: 1.5% 1.5% 15px 1.5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +135,8 @@ export default {
   transform: rotate(45deg);
 }
 .open-card__content-text {
-  height: 85%;
+  height: 82%;
+  padding: 0 1.5% 0 1.5%;
   overflow-y: scroll;
 }
 .open-card__title {
@@ -120,18 +146,126 @@ export default {
   font-size: 20px;
 }
 .open-card__footer {
-  width: 100%;
+  width: 97%;
   height: 40px;
-  background-color: #1c3844;
   display: flex;
   justify-content: flex-end;
+  border-radius: 20px;
 }
-.open-card__footer-content {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  width: 15%;
-  justify-content: space-between;
+.header-mobile,
+.for-mobile {
+  display: none;
 }
-
+@media (max-width: 1525px) {
+  .open-card__wrapper {
+    top: 100px;
+  }
+  .open-card__content-text {
+    height: 77%;
+  }
+}
+@media (max-width: 1500px) {
+  .open-card__wrapper {
+    left: 270px;
+  }
+}
+@media (max-width: 1260px) {
+  .open-card__wrapper {
+    left: 260px;
+  }
+  .open-card__title p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1170px) {
+  .open-card__wrapper {
+    top: 90px;
+  }
+}
+@media (max-width: 1130px) {
+  .open-card__wrapper {
+    left: 210px;
+  }
+}
+@media (max-width: 1025px) {
+  .open-card__content-wrapper {
+    width: 100%;
+  }
+}
+@media (max-width: 980px) {
+  .open-card__wrapper {
+    left: 110px;
+  }
+  .open-card__profile img {
+    width: 55px;
+  }
+  .open-card__background-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+  }
+}
+@media (max-height: 920px) {
+  .open-card__content-text {
+    height: 80%;
+  }
+}
+@media (max-height: 810px) and (max-width: 500px) {
+  .open-card__footer {
+    bottom: 60px;
+    height: 65px;
+    border-radius: 0;
+    position: absolute;
+    background-color: #1c3844;
+  }
+  .for-mobile{
+    display: block;
+    width: 100%;
+    height: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .open-card__wrapper {
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  .open-card__content-wrapper {
+    border-radius: 0;
+    padding-top: 20px;
+  }
+  .open-card__content-text {
+    height: 78%;
+    padding: 0 3.5% 0 3.5%;
+  }
+  .open-card__header{
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+    padding: 0 3.5% 10px 3.5%;
+  }
+  .open-card__background-close {
+    background-color: unset;
+  }
+  .open-card__btn-close {
+    transform: rotate(0deg);
+  }
+  .header-mobile__parametres {
+    width: 30%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .open-card__profile-name {
+    font-size: 16px;
+    margin-left: 5px; 
+  }
+  .open-card__footer {
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+  }
+}
 </style>

@@ -25,8 +25,8 @@ export default {
             this.scrollDekstopFunction()
         }
     },
-    created() {
+    beforeUpdate(){
         this.scrollDekstopFunction()
-    },
+    }
 
 };
