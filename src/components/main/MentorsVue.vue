@@ -20,7 +20,7 @@
               (card.titleCard = null),
               card.contentBody,
               (card.popularityCard = null),
-              card.sphera,
+              card.sphere,
               card.sum,
             ])
         "
@@ -39,7 +39,7 @@
             {{ card.contentBody.slice(0, bodySlice) + threeDots }}
           </p>
           <div class="mentors__footer">
-            <p>Сфера: {{ card.sphera.slice(0, spheraSlice) + threeDots }}</p>
+            <p>Сфера: {{ card.sphere.slice(0, sphereSlice) + threeDots }}</p>
             <p>Стоимость: {{ card.sum }}</p>
           </div>
         </div>

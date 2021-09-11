@@ -7,11 +7,11 @@ export const getCardContent = {
         title: null,
         body: null,
         popularity: null,
-        sphera: null,
+        sphere: null,
         sum: null
     },
     mutations: {
-        changeContentState(state, [id, iconURL, nameCard, nameProfile, titleCard, contentBody, popularityCard, sphera, sum]) {
+        changeContentState(state, [id, iconURL, nameCard, nameProfile, titleCard, contentBody, popularityCard, sphere, sum]) {
             state.id = id,
             state.iconURL = iconURL,
             state.nameCard = nameCard,
@@ -19,7 +19,7 @@ export const getCardContent = {
             state.title = titleCard,
             state.body = contentBody,
             state.popularity = popularityCard,
-            state.sphera = sphera,
+            state.sphere = sphere,
             state.sum = sum
         }
     },

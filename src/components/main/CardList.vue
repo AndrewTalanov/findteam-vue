@@ -20,7 +20,7 @@
               card.titleCard,
               card.contentBody,
               card.popularityCard,
-              (card.sphera = null),
+              card.sphere,
               (card.sum = null),
             ])
         "

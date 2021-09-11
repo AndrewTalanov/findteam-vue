@@ -2,6 +2,7 @@
   <div class="open-card__wrapper">
     <div class="open-card__inner">
       <div class="open-card__content-wrapper">
+        <!-- header desktop -->
         <div class="open-card__header">
           <div class="open-card__profile">
             <img src="@/assets/images/navmenu-avatar.png" alt="avatar" />
@@ -46,9 +47,13 @@
           <p>
             {{ $store.state.getContent.body }}
           </p>
+          <div class="sphere">
+            <p>Сфера: {{$store.state.getContent.sphere}} </p>
+          </div>
           <div class="for-mobile"></div>
         </div>
-        <div class="open-card__footer" v-show="$store.state.active == 2">
+        <!-- footer -->
+        <div class="open-card__footer">
           <footer-desktop/>
           <footer-mobile/>
         </div>
@@ -99,6 +104,7 @@ export default {
   border-radius: 30px;
 }
 .open-card__content-wrapper {
+  position: relative;
   width: 75%;
   height: 100%;
   background-color: #1c3844;
@@ -135,7 +141,7 @@ export default {
   transform: rotate(45deg);
 }
 .open-card__content-text {
-  height: 82%;
+  height: 80%;
   padding: 0 1.5% 0 1.5%;
   overflow-y: scroll;
 }
@@ -146,6 +152,8 @@ export default {
   font-size: 20px;
 }
 .open-card__footer {
+  position: absolute;
+  bottom: 10px;
   width: 97%;
   height: 40px;
   display: flex;
@@ -155,6 +163,9 @@ export default {
 .header-mobile,
 .for-mobile {
   display: none;
+}
+.sphere{
+  margin: 10px 0 10px 0;
 }
 @media (max-width: 1525px) {
   .open-card__wrapper {
@@ -210,20 +221,6 @@ export default {
     height: 80%;
   }
 }
-@media (max-height: 810px) and (max-width: 500px) {
-  .open-card__footer {
-    bottom: 60px;
-    height: 65px;
-    border-radius: 0;
-    position: absolute;
-    background-color: #1c3844;
-  }
-  .for-mobile{
-    display: block;
-    width: 100%;
-    height: 50px;
-  }
-}
 @media (max-width: 500px) {
   .open-card__wrapper {
     left: 0;
@@ -266,6 +263,16 @@ export default {
     justify-content: space-between;
     margin: 0;
     width: 100%;
+    bottom: 85px;
+    height: 65px;
+    border-radius: 0;
+    background-color: #1c3844;
+    /* background-color: red; */
+  }
+  .for-mobile{
+    display: block;
+    width: 100%;
+    height: 80px;
   }
 }
 </style>

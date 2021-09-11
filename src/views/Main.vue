@@ -12,6 +12,15 @@
     <investors-vue v-else-if="$store.state.active == 6"></investors-vue>
     <mentors-vue v-else-if="$store.state.active == 7"></mentors-vue>
   </main>
+  <!-- 
+    1 - Моя страница
+    2 - Публикации
+    3 - Сообщения
+    4 - Подписки
+    5 - Избранное
+    6 - Инвесторы
+    7 - Менторы
+   -->
 </template>
 
 <script>
@@ -109,7 +118,7 @@ html {
 /* для табов */
 .all-tab__wrapper {
   width: 100%;
-  height: 93vh;
+  height: 97vh;
 }
 .all-tab__inner {
   width: 90%;
