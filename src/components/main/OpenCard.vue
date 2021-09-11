@@ -3,42 +3,9 @@
     <div class="open-card__inner">
       <div class="open-card__content-wrapper">
         <!-- header desktop -->
-        <div class="open-card__header">
-          <div class="open-card__profile">
-            <img src="@/assets/images/navmenu-avatar.png" alt="avatar" />
-            <div class="open-card__profile-name">
-              <p>{{ $store.state.getContent.nameProfile }}</p>
-            </div>
-          </div>
-          <div
-            class="open-card__background-close"
-            @click="$store.commit('openCard')"
-          >
-            <img
-              src="@/assets/images/add-card.png"
-              alt="close"
-              class="open-card__btn-close"
-            />
-          </div>
-        </div>
+        <header-desktop/>
         <!-- header для мобилок -->
-        <div class="open-card__header header-mobile">
-          <div
-            class="open-card__background-close"
-            @click="$store.commit('openCard')"
-          >
-            <img
-              src="@/assets/images/close-arrow.png"
-              alt="close"
-              class="open-card__btn-close"
-            />
-          </div>
-          <div class="header-mobile__parametres">
-            <img src="@/assets/images/comments.png" alt="com" />
-            <img src="@/assets/images/warning.png" alt="warn" />
-            <img src="@/assets/images/dontknow.png" alt="izb" />
-          </div>
-        </div>
+        <header-mobile/>
         <!-- --- -->
         <div class="open-card__content-text">
           <div class="open-card__title" v-if="$store.state.active == 2">
@@ -66,11 +33,15 @@
 import { watch } from "@vue/runtime-core";
 import FooterMobile from "@/components/main/openCard/FooterMobile"
 import FooterDesktop from '@/components/main/openCard/FooterDesktop';
+import HeaderDesktop from '@/components/main/openCard/HeaderDesktop.vue';
+import HeaderMobile from '@/components/main/openCard/HeaderMobile.vue';
 export default {
   name: "open-card",
   components: {
     FooterMobile,
-    FooterDesktop
+    FooterDesktop,
+    HeaderDesktop,
+    HeaderMobile
   },
   data() {
     return {
@@ -109,36 +80,6 @@ export default {
   height: 100%;
   background-color: #1c3844;
   border-radius: 30px;
-}
-.open-card__header {
-  padding: 1.5% 1.5% 15px 1.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.open-card__profile {
-  display: flex;
-  align-items: center;
-}
-.open-card__profile-name {
-  margin-left: 15px;
-}
-.open-card__profile-name p {
-  font-size: 18px;
-}
-.open-card__background-close {
-  width: 45px;
-  height: 45px;
-  border-radius: 15px;
-  background-color: #264d5c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.open-card__btn-close {
-  width: 65%;
-  margin-left: 2px;
-  transform: rotate(45deg);
 }
 .open-card__content-text {
   height: 80%;
@@ -207,14 +148,6 @@ export default {
   .open-card__wrapper {
     left: 110px;
   }
-  .open-card__profile img {
-    width: 55px;
-  }
-  .open-card__background-close {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-  }
 }
 @media (max-height: 920px) {
   .open-card__content-text {
@@ -236,29 +169,6 @@ export default {
     height: 78%;
     padding: 0 3.5% 0 3.5%;
   }
-  .open-card__header{
-    display: none;
-  }
-  .header-mobile {
-    display: flex;
-    padding: 0 3.5% 10px 3.5%;
-  }
-  .open-card__background-close {
-    background-color: unset;
-  }
-  .open-card__btn-close {
-    transform: rotate(0deg);
-  }
-  .header-mobile__parametres {
-    width: 30%;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  .open-card__profile-name {
-    font-size: 16px;
-    margin-left: 5px; 
-  }
   .open-card__footer {
     justify-content: space-between;
     margin: 0;
@@ -267,7 +177,6 @@ export default {
     height: 65px;
     border-radius: 0;
     background-color: #1c3844;
-    /* background-color: red; */
   }
   .for-mobile{
     display: block;
