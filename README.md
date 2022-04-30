@@ -1,3 +1,5 @@
+Ознакомление с vue, vuex, vue-router, адаптивная верстка почти всего проекта + частичный функционал
+
 # project_findteam
 
 ## Project setup
